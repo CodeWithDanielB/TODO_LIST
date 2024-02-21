@@ -15,7 +15,7 @@ namespace Entity.Models
         public bool is_completed { get; set; }
         public DateTime to_createdate { get; set; }
         public string to_createby { get; set; }
-
+        public string to_priority { get; set; }
         public string to_mode { get; set; }
 
     }
