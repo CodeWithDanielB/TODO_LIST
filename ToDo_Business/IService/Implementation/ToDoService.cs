@@ -12,7 +12,18 @@ namespace ToDo_Business.IService.Implementation
     {
         public void deleteTod(int id)
         {
-            throw new NotImplementedException();
+
+            var taskToDelete = todoList.FirstOrDefault(task => task.Id == id);
+
+            if (taskToDelete != null)
+            {
+                todoList.Remove(taskToDelete);
+                Console.WriteLine($"Task with ID {id} deleted successfully.");
+            }
+            else
+            {
+                Console.WriteLine($"Task with ID {id} not found.");
+            }
         }
 
         public Task<ToDoModel> getAllToDoList()
