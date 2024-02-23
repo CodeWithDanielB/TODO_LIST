@@ -8,6 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.28" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.5" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
@@ -15,5 +17,7 @@
     <ProjectReference Include="..\Entity\Entity.csproj" />
     <ProjectReference Include="..\ToDo_Business\ToDo_Business.csproj" />
   </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="https://json.schemastore.org/aurora-1.1.json" /></VisualStudio></ProjectExtensions>
 
 </Project>

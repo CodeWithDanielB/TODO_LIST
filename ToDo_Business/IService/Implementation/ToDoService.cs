@@ -12,12 +12,13 @@ namespace ToDo_Business.IService.Implementation
     {
         public void deleteTod(int id)
         {
+            List<int> taskNumber = new List<int>();
 
-            var taskToDelete = todoList.FirstOrDefault(task => task.Id == id);
+            var taskToDelete = taskNumber.FirstOrDefault(task => task.Id == id);
 
             if (taskToDelete != null)
             {
-                todoList.Remove(taskToDelete);
+                taskNumber.Remove(taskToDelete);
                 Console.WriteLine($"Task with ID {id} deleted successfully.");
             }
             else
