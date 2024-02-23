@@ -10,36 +10,38 @@ namespace ToDo_Business.IService.Implementation
 {
     public class ToDoService : ITodoService<ToDoModel>
     {
+        private List<TodoItem> _todoItems = new List<TodoItem>();
         public void deleteTod(int id)
         {
-            List<int> taskNumber = new List<int>();
-
-            var taskToDelete = taskNumber.FirstOrDefault(task => task.Id == id);
-
+            var taskToDelete = _todoItems.FirstOrDefault(t => t.id == id);
             if (taskToDelete != null)
             {
-                taskNumber.Remove(taskToDelete);
-                Console.WriteLine($"Task with ID {id} deleted successfully.");
-            }
-            else
-            {
-                Console.WriteLine($"Task with ID {id} not found.");
+                _todoItems.Remove(taskToDelete);
             }
         }
 
         public Task<ToDoModel> getAllToDoList()
         {
-            throw new NotImplementedException();
+            return Task.FromResult(_todoItems);
         }
 
         public ToDoModel getById(int id)
         {
-            throw new NotImplementedException();
+            return _todoItems.FirstOrDefault(t => t.id == t);
         }
 
         public Task<ToDoModel> saveUpdateToDo(ToDoModel obj)
         {
-            throw new NotImplementedException();
+            var existingTask = _todoItems.FirstOrDefault( t => t.id == obj.id);
+            if (existingTask != null) 
+            {
+                existingTask = obj;
+            }
+            else
+            {
+                _todoItems.Add(obj);
+            }
+            return Task.FromResult(obj);
         }
     }
 }
