@@ -9,6 +9,7 @@ using System.Data;
 
 namespace ToDo_Business.Context
 {
+    //connection with the database is tried to be done here in this lines of code
     public class DapperContext
     {
         private readonly IConfiguration _configuration;
