@@ -13,4 +13,5 @@ namespace ToDo_Business.IService.Interfaces
         Task<T> saveUpdateToDo(T obj);
         void deleteTod(int id);
     }
+
 }

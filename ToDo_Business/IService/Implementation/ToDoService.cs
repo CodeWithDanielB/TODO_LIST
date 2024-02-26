@@ -10,10 +10,10 @@ namespace ToDo_Business.IService.Implementation
 {
     public class ToDoService : ITodoService<ToDoModel>
     {
-        private List<todo_id> _todoItems = new List<todo_id>();
+        private List<Task> _todoItems = new List<Task>();
         public void deleteTod(int id)
         {
-            var taskToDelete = _todoItems.FirstOrDefault(t => t.id == id);
+            var taskToDelete = _todoItems.FirstOrDefault(t => t.Id == id);
             if (taskToDelete != null)
             {
                 _todoItems.Remove(taskToDelete);
