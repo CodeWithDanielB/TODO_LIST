@@ -8,10 +8,12 @@ namespace ToDo_Business.IService.Interfaces
 {
     public interface ITodoService<T> where T : class
     {
-        Task<T> getAllToDoList();
-        T getById(int id);
-        Task<T> saveUpdateToDo(T obj);
-        void deleteTod(int id);
+
+        Task<T> GetByIdAsync(int id);
+        Task<List<T>> getAllToDoAsync();
+        Task<int> AddAsync(T obj);
+        Task<int> UpdateTodoAsync(T obj);
+        Task<int> DeleteAsync(int id);
     }
 
 }
