@@ -8,9 +8,9 @@ using ToDo_Business.IService.Interfaces;
 
 namespace ToDo_Business.IService.Implementation
 {
-    public class ToDoService : ITodoService<ToDoModel>
+    public class ToDoService : ITaskRepository
     {
-        private List<Task> _todoItems = new List<Task>();
+       public object _todoItems
         public void deleteTod(int id)
         {
             var taskToDelete = _todoItems.FirstOrDefault(t => t.Id == id);
@@ -32,8 +32,8 @@ namespace ToDo_Business.IService.Implementation
 
         public Task<ToDoModel> saveUpdateToDo(ToDoModel obj)
         {
-            var existingTask = _todoItems.FirstOrDefault( t => t.id == obj.id);
-            if (existingTask != null) 
+            var existingTask = _todoItems.FirstOrDefault(t => t.id == obj.id);
+            if (existingTask != null)
             {
                 existingTask = obj;
             }

@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Entity.Models;
 
 namespace ToDo_Business.IService.Interfaces
 {
-    public interface ITaskRepository: ITodoService<Task>
-    {
+    internal interface ITaskRepository :  ITodoService<ToDoModel>
+    
+
     }
 }
