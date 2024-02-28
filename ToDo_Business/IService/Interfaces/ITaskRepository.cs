@@ -8,7 +8,7 @@ using Entity.Models;
 namespace ToDo_Business.IService.Interfaces
 {
     internal interface ITaskRepository :  ITodoService<ToDoModel>
-    
+    { 
 
     }
 }
