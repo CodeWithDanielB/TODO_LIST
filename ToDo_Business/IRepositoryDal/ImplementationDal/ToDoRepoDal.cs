@@ -24,7 +24,8 @@ namespace ToDo_Business.IRepositoryDal.ImplementationDal
                 string query = @"Select * from TODOLIST";
                 using(var con = _context.CreateConnection())
                 {
-                    
+                    var tasks = await con.QueryAsync<ToDoModel>(query);
+                    return tasks.ToList();
                 }
             }catch(Exception ex)
             {
